@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Depends, HTTPException, APIRouter, Request
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from sqlalchemy import func
@@ -11,7 +11,7 @@ from Demografia.Database import get_db
 #from Demografia.mapa import generuj_mape
 from Demografia import crud
 
-app = FastAPI()
+app = FastAPI(debug=True)
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
