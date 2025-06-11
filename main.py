@@ -17,8 +17,8 @@ templates = Jinja2Templates(directory="templates")
 
 
 @app.get("/")
-def read_root():
-    return {"Hello": "World"}
+def redirect_to_index():
+    return RedirectResponse(url="/index/")
 
 
 # @app.post("/import-csv")
