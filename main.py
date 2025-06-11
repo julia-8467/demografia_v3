@@ -18,6 +18,12 @@ app = FastAPI()
 router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
 # @app.post("/import-csv")
 # def import_csv(db: Session = Depends(get_db)):
 #     import_csv_to_db(db, "D:/Users/julli/Studia/VIsemestr/Chmury/Dane/Ludność_woj/pl_lud_2017_v2.csv")
